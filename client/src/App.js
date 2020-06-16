@@ -1,11 +1,21 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
+import "./App.scss";
+import Header from "./components/Header";
+import Banner from "./components/Banner";
+import Projects from "./components/Projects"
 
-import "./App.css";
+function App() {
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-class App extends Component {
+  },
+  []);
   return (
     <div className="App">
-      <h1>Welcome to Himagaman</h1>
+      <Header />
+      <Banner />
+      <Projects />
     </div>
   );
 }
